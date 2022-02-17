@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-echo ${INPUT_DIRECTORY}
+cd src
 
-php artisan translations:check
+php artisan translations:check --directory=${INPUT_DIRECTORY}
 
 echo "::set-output name=results::${INPUT_DIRECTORY}"
