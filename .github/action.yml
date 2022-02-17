@@ -1,0 +1,8 @@
+- name: Run translation checker
+  uses: ./ # Uses an action in the root directory
+  id: translation-checker
+  with:
+    directory: '/test'
+# Use the pokemon_name output from our action (id:pokemon)
+- name: Get the pokemon
+  run: echo "${{ steps.translation-checker.outputs.results }}"
