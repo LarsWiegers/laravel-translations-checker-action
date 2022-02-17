@@ -1,0 +1,16 @@
+# action.yaml
+name: 'Laravel translation checker Github Action'
+description: 'Run your translations'
+inputs:
+  directory:
+    description: 'directory where lang files are'
+    required: true
+    default: 'src/lang'
+outputs:
+  results:
+    description: 'the errors or okay message'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{inputs.directory}}
